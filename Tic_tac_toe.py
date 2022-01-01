@@ -146,11 +146,15 @@ while victory == 0:
     counter_field = 9-free_field
     if counter_field > 4:
         victory = victory_for(board, victory)
+        if victory != 0:
+            break
     enter_move(board)
     free_field = make_list_of_free_fields(board)
     counter_field = 9 - free_field
     if counter_field > 4:
         victory = victory_for(board, victory)
+        if victory != 0:
+            break
 
 print("The winner is... \n3")
 time.sleep(1)
