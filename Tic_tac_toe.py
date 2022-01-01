@@ -20,6 +20,7 @@ def enter_move(board):
     # checks the input, and updates the board according to the user's decision.
     result = False
     k = 0
+    print("---------------------------------------------------------------------------------------------")
     while not result:
         c = 0
         if k == 0:
@@ -43,7 +44,8 @@ def enter_move(board):
         k += 1
     time.sleep(1)
     display_board(board)
-
+    print("---------------------------------------------------------------------------------------------")
+    time.sleep(1)
 
 
 def make_list_of_free_fields(board):
@@ -60,9 +62,9 @@ def make_list_of_free_fields(board):
 def victory_for(board,sign):
     # The function analyzes the board's status in order to check if
     # the player using 'O's or 'X's has won the game
-    if board[0][0] == 'X' and board[1][0] == 'X' and board[2][0] == 'X':  # first row
+    if board[0][0] == 'X' and board[1][0] == 'X' and board[2][0] == 'X':  # first column
         sign = 1
-    elif board[0][0] == 'X' and board[0][1] == 'X' and board[0][2] == 'X':  # first column
+    elif board[0][0] == 'X' and board[0][1] == 'X' and board[0][2] == 'X':  # first row
         sign = 1
     elif board[1][0] == 'X' and board[1][1] == 'X' and board[1][2] == 'X':  # second row
         sign = 1
@@ -70,16 +72,16 @@ def victory_for(board,sign):
         sign = 1
     elif board[2][0] == 'X' and board[2][1] == 'X' and board[2][2] == 'X':  # third row
         sign = 1
-    elif board[2][0] == 'X' and board[2][1] == 'X' and board[2][2] == 'X':  # third column
+    elif board[0][2] == 'X' and board[1][2] == 'X' and board[2][2] == 'X':  # third column
         sign = 1
     elif board[0][0] == 'X' and board[1][1] == 'X' and board[2][2] == 'X':  # first trav
         sign = 1
     elif board[0][2] == 'X' and board[1][1] == 'X' and board[2][0] == 'X':  # second trav
         sign = 1
 
-    if board[0][0] == 'O' and board[1][0] == 'O' and board[2][0] == 'O':  # first row
+    if board[0][0] == 'O' and board[1][0] == 'O' and board[2][0] == 'O':  # first column
         sign = 2
-    elif board[0][0] == 'O' and board[0][1] == 'O' and board[0][2] == 'O':  # first column
+    elif board[0][0] == 'O' and board[0][1] == 'O' and board[0][2] == 'O':  # first row
         sign = 2
     elif board[1][0] == 'O' and board[1][1] == 'O' and board[1][2] == 'O':  # second row
         sign = 2
@@ -87,7 +89,7 @@ def victory_for(board,sign):
         sign = 2
     elif board[2][0] == 'O' and board[2][1] == 'O' and board[2][2] == 'O':  # third row
         sign = 2
-    elif board[2][0] == 'O' and board[2][1] == 'O' and board[2][2] == 'O':  # third column
+    elif board[0][2] == 'O' and board[1][2] == 'O' and board[2][2] == 'O':  # third column
         sign = 2
     elif board[0][0] == 'O' and board[1][1] == 'O' and board[2][2] == 'O':  # first trav
         sign = 2
@@ -99,7 +101,7 @@ def victory_for(board,sign):
 
 def draw_move(board):
     #The function draws the computer's move and updates the board.
-
+    print("-------------------------------------------------------------------------------------------------")
     print("Turn of the computer")
     result = False
     while not result:
@@ -118,11 +120,13 @@ def draw_move(board):
                 c += 1
     time.sleep(1)
     display_board(board)
-    
+    print("------------------------------------------------------------------------------------------------")
+    time.sleep(1)
+
 
 board = [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']]
 board_of_rematch = [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']]
-print("--------------------------------------------------------------------------------------------------------------------------------")
+print("----------------------------------------------------------------------------------------------------")
 print("The computer will start with the first move...", "\nThe computer will start the game using the using X")
 print("You will use O...")
 print("Countdown \n3")
@@ -159,5 +163,6 @@ if victory == 2:
     print("Is you 'O'")
 elif victory == 1:
     print("Is computer 'X'")
-
+else:
+    print("Draw")
 
