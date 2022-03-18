@@ -143,6 +143,9 @@ victory = 0  # False for computer and # True for the client
 while victory == 0:
     draw_move(board)
     free_field = make_list_of_free_fields(board)
+
+    if free_field == 0 :
+        break
     counter_field = 9-free_field
     if counter_field > 4:
         victory = victory_for(board, victory)
