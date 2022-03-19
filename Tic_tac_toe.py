@@ -20,7 +20,7 @@ def enter_move(board):
     # checks the input, and updates the board according to the user's decision.
     result = False
     k = 0
-    print("---------------------------------------------------------------------------------------------")
+    print("##########################################################################################")
     while not result:
         c = 0
         if k == 0:
@@ -44,7 +44,7 @@ def enter_move(board):
         k += 1
     time.sleep(1)
     display_board(board)
-    print("---------------------------------------------------------------------------------------------")
+    print("##########################################################################################")
     time.sleep(1)
 
 
@@ -101,7 +101,7 @@ def victory_for(board,sign):
 
 def draw_move(board):
     #The function draws the computer's move and updates the board.
-    print("-------------------------------------------------------------------------------------------------")
+    print("##########################################################################################")
     print("Turn of the computer")
     result = False
     while not result:
@@ -120,13 +120,13 @@ def draw_move(board):
                 c += 1
     time.sleep(1)
     display_board(board)
-    print("------------------------------------------------------------------------------------------------")
+    print("##########################################################################################")
     time.sleep(1)
 
 
 board = [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']]
 board_of_rematch = [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']]
-print("----------------------------------------------------------------------------------------------------")
+print("##########################################################################################")
 print("The computer will start with the first move...", "\nThe computer will start the game using the using X")
 print("You will use O...")
 print("Countdown \n3")
@@ -143,7 +143,6 @@ victory = 0  # False for computer and # True for the client
 while victory == 0:
     draw_move(board)
     free_field = make_list_of_free_fields(board)
-
     if free_field == 0 :
         break
     counter_field = 9-free_field
